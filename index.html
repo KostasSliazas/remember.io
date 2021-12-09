@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Remember 1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Remenber values">
+    <meta name="author" content="Kostas">
+    <style>
+        html {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font: 16px/1.5 Arial, sans-serif;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            color: #777;
+            background: #fafafa;
+        }
+
+        button,
+        input {
+            background: #eee;
+            cursor: pointer;
+            height: 48px;
+            text-transform: uppercase;
+            width: 100%;
+            display: block;
+            border: 0;
+            margin: 2px 0;
+            border-radius: 4px;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-weight: 900;
+            text-align: center;
+            transition: all 0.2s;
+            padding: 0;
+            box-shadow: 0 0 0 1px #777 inset;
+        }
+
+        button {
+            background: #495;
+            color: #eee;
+        }
+
+        #clearLocalStorage {
+            background: #e65;
+            scroll-snap-align: start;
+            scroll-padding: 120px;
+        }
+
+        button:focus {
+            outline: 0;
+        }
+
+        button:first-of-type {
+            margin-bottom: 0;
+        }
+
+        button:hover {
+            color: #000;
+            background: #7fa;
+        }
+
+        #box {
+            overflow: visible;
+            width: 100%;
+            max-width: 480px;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            scroll-snap-type: y mandatory;
+        }
+
+        #list {
+            display: grid;
+            grid-template-columns: 48px auto auto auto;
+            width: 100%;
+        }
+
+        .delete {
+            height: 48px;
+            width: 48px;
+            cursor: pointer;
+            z-index: 1;
+            font-size: 48px;
+            color: #eee;
+        }
+
+        span {
+            line-height: 48px;
+            display: block;
+            box-shadow: 0 0 0 1px #fff inset;
+            text-transform: capitalize;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+
+        span:nth-last-of-type(4n+0) {
+            background: #ECD5C9;
+        }
+
+        span:nth-child(2n+2) {
+            background: #F1F0E5;
+            padding: 0 6px;
+            text-align: left;
+        }
+
+        span:nth-child(4n+3) {
+            background: #E4E7CF;
+        }
+
+        span:nth-last-of-type(-n+4) {
+            background: #E4E7CF;
+        }
+
+        .wraper {
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wraper">
+        <div id="box">
+            <form name="prekes" action=""><input id="preke" type="text" placeholder="Prekė" name="preke" required><input
+                    id="kaina" type="text" placeholder="Kaina" name="kaina" required></form><button
+                id="primest">Pridėti</button>
+            <div id="list"></div><button id="clearLocalStorage">Valyti viska</button>
+        </div>
+    </div>
+    <script src="js/script.min.js"></script>
+</body>
+
+</html>
